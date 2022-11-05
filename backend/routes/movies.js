@@ -1,16 +1,16 @@
 var express = require('express');
 var router = express.Router();
-var webtoons = require('../data.json');
+var movies = require('../data.json');
 router.get('/',function(req,res,next){
-    res.send(webtoons);
+    res.send(movies);
 });
 
 router.get('/:id', function(req, res, next){
     var id = parseInt(req.params.id, 10);
-    var webtoon = webtoons.filter(function (webtoon){
+    var movie = movies.filter(function (movie){
         return webtoon.id == id
     });
-    res.send(webtoon);
+    res.send(movie);
 })
 
 module.exports = router;
