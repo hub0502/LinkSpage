@@ -25,7 +25,7 @@ export default {
   created(){
     this.$http.get('/api/movies')
     .then((response) => {
-      tihs.movies = response.data;
+      this.movies = response.data;
     }).catch(err => {
       alert(err);
       console.log(err);

@@ -1,26 +1,9 @@
-import Vue from 'vue'
-import VueRouter from 'vue-router'
-import Index from '@/compoenets/MovieIndexPage'
-import Show from '@/components/MovieDetailPage'
+var express = require('express');
+var router = express.Router();
 
-Vue.use(VueRouter)
+/* GET home page. */
+router.get('/', function(req, res, next) {
+  res.render('index', { title: 'Express' });
+});
 
-const routes =[
-    {
-        path: '/',
-        name: 'index',
-        component: Index
-
-    },
-    {
-        path: '/:id',
-        name: 'show',
-        component: Show
-    }
-]
-
-const router = new VueRouter({
-    routes
-})
-
-export default router
+module.exports = router;
